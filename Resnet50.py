@@ -21,7 +21,7 @@ def conv_batchnorm_relu(x, filters, kernel_size, strides=1):
 def identity_block(tensor, filters):
     
     x = conv_batchnorm_relu(tensor, filters=filters, kernel_size=1, strides=1)
-    x = conv_batchnorm_relu(x, filters=filters, kernel_size=1, strides=1)
+    x = conv_batchnorm_relu(x, filters=filters, kernel_size=3, strides=1)
     x = Conv2D(filters=4*filters, kernel_size=1, strides=1)(x)
     x = BatchNormalization()(x)
     
@@ -36,7 +36,7 @@ def projection_block(tensor, filters, strides):
     
     #left stream
     x = conv_batchnorm_relu(tensor, filters=filters, kernel_size=1, strides=strides)
-    x = conv_batchnorm_relu(x, filters=filters, kernel_size=1, strides=1)
+    x = conv_batchnorm_relu(x, filters=filters, kernel_size=3, strides=1)
     x = Conv2D(filters=4*filters, kernel_size=1, strides=1)(x)
     x = BatchNormalization()(x)
     

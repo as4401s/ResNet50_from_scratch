@@ -12,4 +12,4 @@
 
 ### ResNet50
 
-![image](Images/a_s.png)
+![image](Images/4_a.png)
